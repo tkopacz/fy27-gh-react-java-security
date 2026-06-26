@@ -44,6 +44,13 @@ mvn -Dtest=ProductControllerTest test
 
 No lint command is documented or configured yet. Do not invent lint tooling unless the task is to add it.
 
+## Codespaces and dev containers
+
+- `.devcontainer/devcontainer.json` defines the preferred Codespaces environment with Node.js 22, Java 21, Maven, Docker-in-Docker, and a PostgreSQL service from `.devcontainer/docker-compose.yml`.
+- The dev container requests a larger Codespaces host: 4 CPUs, 16 GB RAM, and 32 GB storage.
+- Forwarded ports are `5173` for Vite, `8080` for Spring Boot, and `5432` for PostgreSQL.
+- PostgreSQL defaults are for local demo development only: database `demo`, user `demo`, password `demo`.
+
 ## MCP servers
 
 - `.vscode/mcp.json` configures the Playwright MCP server for browser-based inspection and automation of the planned React frontend.

@@ -1,0 +1,74 @@
+{
+  "name": "React Java Security Demo",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": true
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+  "containerEnv": {
+    "VITE_API_BASE_URL": "http://localhost:8080",
+    "SPRING_DATASOURCE_URL": "jdbc:postgresql://postgres:5432/demo",
+    "SPRING_DATASOURCE_USERNAME": "demo",
+    "SPRING_DATASOURCE_PASSWORD": "demo"
+  },
+  "forwardPorts": [5173, 8080, 5432],
+  "portsAttributes": {
+    "5173": {
+      "label": "React Vite dev server",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Spring Boot API",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "node --version && npm --version && java -version && mvn --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "ms-azuretools.vscode-containers",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ZixuanChen.vitest-explorer",
+        "GitHub.vscode-github-actions",
+        "ms-ossdata.vscode-pgsql"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.compile.nullAnalysis.mode": "automatic",
+        "typescript.tsdk": "frontend/node_modules/typescript/lib",
+        "vitest.rootConfig": "frontend/vite.config.ts"
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        ".github/copilot-instructions.md",
+        "docs/implementation-tasks/README.md"
+      ]
+    }
+  }
+}
