@@ -31,6 +31,13 @@ jobs:
           languages: ${{ matrix.language }}
           queries: security-extended
 
+      - name: Set up Java 21 (required for java-kotlin analysis)
+        if: matrix.language == 'java-kotlin'
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
