@@ -8,7 +8,7 @@ This repository is currently a documentation-first project. It already contains:
 - A detailed implementation backlog in `docs/implementation-tasks/`.
 - Repository instructions in `.github/copilot-instructions.md`.
 - Codespaces/devcontainer configuration with Node.js 22, Java 21/Maven, Docker-in-Docker, and PostgreSQL 16.
-- Playwright MCP configuration in `.vscode/mcp.json`.
+- Playwright MCP configuration in `.mcp.json`.
 
 The runnable app does not exist yet. There is no committed `frontend/package.json`, `backend/pom.xml`, GitHub Actions workflow, Dependabot config, or demo application code.
 
