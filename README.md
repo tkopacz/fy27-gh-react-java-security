@@ -21,6 +21,39 @@ Licensed under the [MIT License](LICENSE).
 - `VITE_*` values are public bundle data — never treat them as secrets.
 - Never copy vulnerable patterns to production code.
 
+## Running on GitHub Codespaces (recommended)
+
+The fastest way to get started — no local install needed.
+
+1. Click **Code → Codespaces → Create codespace on main** in the GitHub UI, or use the button below.
+2. Wait ~2 minutes for the container to build (Node 22, Java 21, Maven, PostgreSQL 16 are pre-installed).
+3. Open two terminals in VS Code and run:
+
+**Terminal 1 — Backend:**
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+**Terminal 2 — Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Codespaces automatically forwards the ports and shows a notification when each service is ready:
+
+| Service | Port | URL (auto-forwarded) |
+|---|---|---|
+| React Vite dev server | 5173 | shown in Ports tab |
+| Spring Boot API | 8080 | shown in Ports tab |
+| PostgreSQL | 5432 | internal only |
+
+> **Note:** The devcontainer requests a **4 CPU / 16 GB RAM / 32 GB storage** machine.
+> In the Codespaces creation dialog, select a machine type that meets these requirements
+> (the default 2-core machine may be slow for the Java build).
+
 ## Running locally
 
 ### Backend (Java 21 + Maven required)
