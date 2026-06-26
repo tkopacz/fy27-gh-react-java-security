@@ -1,0 +1,7 @@
+// Demo prompt material for Copilot-driven refactoring of the order flow.
+// This file is intentionally non-compiling and only used as a prompt asset.
+package com.example.demo.order;
+
+class OrderControllerPrompt {
+    // Ask Copilot to turn this sketch into a production-safe controller with validation.
+}
