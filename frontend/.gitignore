@@ -2,3 +2,8 @@ node_modules/
 dist/
 *.local
 .vite/
+# TypeScript incremental build info (generated, not source of truth)
+*.tsbuildinfo
+# Generated JS/d.ts from vite.config.ts — source of truth is vite.config.ts
+vite.config.js
+vite.config.d.ts
