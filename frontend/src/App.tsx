@@ -1,32 +1,11 @@
-import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { AppLayout } from './components/AppLayout';
 import ProductsPage from './pages/ProductsPage';
 import OrderPage from './pages/OrderPage';
 import SecurityDemoPage from './pages/SecurityDemoPage';
 import LoginPage from './pages/LoginPage';
-import { Outlet } from 'react-router-dom';
 import { VulnerableSearchPage } from './security-demo/VulnerableSearchPage';
 
-function AppLayout() {
-  return (
-    <div className="app-shell">
-      <header className="topbar">
-        <div>
-          <h1>React + Java Security Demo</h1>
-          <p>Customer-friendly storefront with frontend and backend security examples.</p>
-        </div>
-        <nav className="nav-links" aria-label="Primary navigation">
-          <NavLink to="/products">Products</NavLink>
-          <NavLink to="/order">Order</NavLink>
-          <NavLink to="/security-demo">Security demo</NavLink>
-          <NavLink to="/login">Login</NavLink>
-        </nav>
-      </header>
-      <main>
-        <Outlet />
-      </main>
-    </div>
-  );
-}
 
 function App() {
   return (
