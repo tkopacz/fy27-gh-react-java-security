@@ -1,12 +1,9 @@
 {
-  "mcpServers": {
+  "servers": {
     "playwright": {
       "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@playwright/mcp@latest"
-      ]
+      "command": "/home/tkopacz/.nvm/versions/node/v24.13.0/bin/npx",
+      "args": ["-y", "@playwright/mcp@latest"]
     }
   }
 }
